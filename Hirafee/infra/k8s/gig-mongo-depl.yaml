@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gig-mongo-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gig-mongo
+  template:
+    metadata:
+      labels:
+        app: gig-mongo
+    spec:
+      containers:
+        - name: gig-mongo
+          image: mongo
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gig-mongo-srv
+spec:
+  selector:
+    app: gig-mongo
+  ports:
+    - name: db
+      protocol: TCP
+      port: 27017
+      targetPort: 27017

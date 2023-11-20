@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.error-div {
+  padding: 30px;
+  background-color: rgb(255, 214, 214);
+  margin: 1rem;
+  border-radius: 0.25rem;
+}
+.error-div-heading {
+  color: rgb(255, 65, 65);
+  font-weight: bold;
+}
+
+.error-div-li {
+  color: rgb(255, 65, 65);
+}
